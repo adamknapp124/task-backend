@@ -12,6 +12,8 @@ const db = mysql.createConnection({
 	database: process.env.DATABASE,
 });
 
+const port = process.env.PORT;
+
 // Establish a connection to the MySQL database
 db.connect((err) => {
 	if (err) {
@@ -99,6 +101,6 @@ app.get('/api/tasks', (req, res) => {
 	});
 });
 
-app.listen(3001, () => {
-	console.log('Server is running on port 3001');
+app.listen(port, () => {
+	console.log(`Server is running on port ${port}`);
 });
