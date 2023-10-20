@@ -2,12 +2,13 @@ const express = require('express');
 const app = express();
 const mysql = require('mysql');
 const cors = require('cors');
+require('dotenv').config();
 // ...
 app.use(cors()); // Use CORS middleware
 
 const db = mysql.createConnection({
 	host: process.env.HOST,
-	user: process.env.ROOT,
+	user: process.env.USER,
 	password: process.env.PASSWORD,
 	database: process.env.DATABASE,
 });
